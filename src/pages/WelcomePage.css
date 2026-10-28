@@ -1,0 +1,887 @@
+
+/* ==========================================
+   TraceCrop — Welcome Page
+   Organic Glassmorphism Design
+   Inspired by FarmerDashboard.css
+   Visual styling only — preserve functionality
+========================================== */
+
+.welcome-page {
+  --welcome-bg: #edf4e9;
+  --welcome-green: #285b38;
+  --welcome-deep: #193d28;
+  --welcome-accent: #438b50;
+  --welcome-mint: #d9edcf;
+  --welcome-text: #263e2e;
+  --welcome-muted: #718575;
+  --welcome-border: rgba(66, 112, 73, 0.18);
+  --welcome-glass: rgba(255, 255, 255, 0.74);
+  --welcome-shadow: 0 12px 32px rgba(25, 61, 35, 0.09);
+
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: var(--welcome-text);
+  background-color: var(--welcome-bg);
+  background-image:
+    radial-gradient(
+      ellipse at 8% 8%,
+      rgba(184, 220, 163, 0.48),
+      transparent 34%
+    ),
+    radial-gradient(
+      ellipse at 94% 18%,
+      rgba(163, 211, 147, 0.36),
+      transparent 30%
+    ),
+    radial-gradient(
+      ellipse at 50% 65%,
+      rgba(255, 255, 255, 0.78),
+      transparent 52%
+    ),
+    linear-gradient(135deg, #edf4e9 0%, #e5f0df 48%, #f3f8ef 100%);
+  font-family: inherit;
+}
+
+.welcome-page,
+.welcome-page * {
+  box-sizing: border-box;
+}
+
+.welcome-page a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.welcome-page a:focus-visible {
+  outline: 3px solid #76ad70;
+  outline-offset: 4px;
+}
+
+/* ==========================================
+   NAVBAR — Frosted glass
+========================================== */
+
+.welcome-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  min-height: 76px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px clamp(20px, 5vw, 72px);
+
+  background: rgba(247, 252, 244, 0.76);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 5px 24px rgba(31, 67, 39, 0.045);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+.welcome-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  flex-shrink: 0;
+
+  color: var(--welcome-green);
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+}
+
+.welcome-brand svg {
+  width: 39px;
+  height: 39px;
+  padding: 7px;
+  color: #f5fff0;
+  background: linear-gradient(145deg, #5a9b59, #285b38);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 13px;
+  box-shadow:
+    0 5px 14px rgba(46, 125, 79, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.welcome-nav-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Navbar buttons */
+
+.btn-nav-login,
+.btn-nav-signup {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 20px;
+  border-radius: 13px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.btn-nav-login {
+  color: var(--welcome-green);
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(69, 116, 73, 0.2);
+}
+
+.btn-nav-login:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(69, 116, 73, 0.42);
+  box-shadow: 0 5px 16px rgba(31, 67, 39, 0.08);
+  transform: translateY(-2px);
+}
+
+.btn-nav-signup {
+  color: #ffffff;
+  background: linear-gradient(135deg, #438b50, #285b38);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow:
+    0 5px 16px rgba(46, 125, 79, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.btn-nav-signup:hover {
+  background: linear-gradient(135deg, #519d5b, #326f41);
+  box-shadow: 0 8px 22px rgba(46, 125, 79, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   HERO — Soft lighting and elegant typography
+========================================== */
+
+.welcome-hero {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(64px, 9vw, 110px) 24px 76px;
+  text-align: center;
+  animation: welcomeFadeUp 0.7s ease both;
+}
+
+.welcome-hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 12%;
+  left: 50%;
+  width: min(80vw, 760px);
+  height: 360px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse,
+    rgba(186, 224, 169, 0.32),
+    transparent 68%
+  );
+  filter: blur(16px);
+}
+
+.welcome-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  max-width: 100%;
+  margin-bottom: 27px;
+  padding: 9px 16px;
+
+  color: #326b3d;
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  border-radius: 999px;
+  box-shadow:
+    0 5px 18px rgba(42, 83, 46, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15px;
+}
+
+.welcome-badge svg {
+  flex-shrink: 0;
+  color: #4c9655;
+}
+
+.welcome-headline {
+  max-width: 900px;
+  margin: 0 auto 24px;
+
+  color: var(--welcome-deep);
+  font-size: clamp(35px, 5.4vw, 61px);
+  font-weight: 850;
+  line-height: 1.13;
+  letter-spacing: -2.3px;
+  text-wrap: balance;
+}
+
+.welcome-subhead {
+  max-width: 760px;
+  margin: 0 auto 34px;
+
+  color: #687e6d;
+  font-size: clamp(15px, 1.6vw, 17px);
+  line-height: 1.85;
+  text-wrap: pretty;
+}
+
+/* Hero buttons */
+
+.welcome-hero-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.btn-primary-large,
+.btn-secondary-large {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 14px 23px;
+
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 750;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.btn-primary-large {
+  color: #ffffff;
+  background: linear-gradient(135deg, #55a35e 0%, #347747 55%, #245a37 100%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow:
+    0 8px 22px rgba(46, 125, 79, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.23);
+}
+
+.btn-primary-large:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 12px 30px rgba(46, 125, 79, 0.34),
+    0 0 18px rgba(112, 181, 104, 0.18);
+  filter: brightness(1.04);
+}
+
+.btn-primary-large svg {
+  transition: transform 0.25s ease;
+}
+
+.btn-primary-large:hover svg {
+  transform: translateX(4px);
+}
+
+.btn-secondary-large {
+  color: var(--welcome-green);
+  background: rgba(255, 255, 255, 0.64);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow:
+    0 5px 18px rgba(31, 67, 39, 0.055),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.btn-secondary-large:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(87, 143, 81, 0.35);
+  box-shadow: 0 9px 24px rgba(31, 67, 39, 0.1);
+}
+
+/* ==========================================
+   CONTENT SECTIONS
+========================================== */
+
+.welcome-section {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 70px 24px;
+}
+
+/* Override the existing inline section background
+   so the botanical glass theme stays consistent. */
+
+.welcome-page .welcome-section[style] {
+  background: transparent !important;
+  border-top-color: rgba(72, 117, 76, 0.13) !important;
+  border-bottom-color: rgba(72, 117, 76, 0.13) !important;
+}
+
+.section-header {
+  margin-bottom: 38px;
+  text-align: center;
+}
+
+.section-title {
+  margin: 0 0 12px;
+  color: var(--welcome-deep);
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.8px;
+  text-wrap: balance;
+}
+
+.section-subtitle {
+  max-width: 690px;
+  margin: 0 auto;
+  color: var(--welcome-muted);
+  font-size: 14px;
+  line-height: 1.75;
+  text-wrap: pretty;
+}
+
+/* ==========================================
+   WORKFLOW CARDS — Frosted glass
+========================================== */
+
+.workflow-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 19px;
+}
+
+.workflow-step-card {
+  position: relative;
+  min-width: 0;
+  padding: 25px 22px;
+
+  background: rgba(255, 255, 255, 0.66);
+  border: 1px solid rgba(255, 255, 255, 0.94);
+  border-radius: 22px;
+  box-shadow:
+    0 10px 30px rgba(31, 69, 39, 0.065),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease,
+    background 0.28s ease;
+
+  animation: welcomeFadeUp 0.65s ease both;
+}
+
+.workflow-step-card:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.workflow-step-card:nth-child(3) {
+  animation-delay: 0.16s;
+}
+
+.workflow-step-card:nth-child(4) {
+  animation-delay: 0.24s;
+}
+
+.workflow-step-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.84);
+  border-color: rgba(117, 171, 105, 0.44);
+  box-shadow:
+    0 17px 38px rgba(31, 69, 39, 0.105),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  margin-bottom: 20px;
+
+  color: #ffffff;
+  background: linear-gradient(145deg, #68a967, #347747);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 14px;
+  box-shadow:
+    0 5px 14px rgba(46, 125, 79, 0.19),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.step-title {
+  margin: 0 0 11px;
+  color: var(--welcome-green);
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.step-desc {
+  margin: 0;
+  color: var(--welcome-muted);
+  font-size: 12.5px;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   ROLE CARDS — Premium glass panels
+========================================== */
+
+.roles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 22px;
+}
+
+.role-card {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 27px 24px 24px;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.96);
+  border-radius: 25px;
+  box-shadow:
+    0 12px 32px rgba(31, 69, 39, 0.075),
+    inset 0 1px 0 rgba(255, 255, 255, 0.98);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.role-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 22px;
+  right: 22px;
+  height: 2px;
+  border-radius: 0 0 10px 10px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(104, 169, 103, 0.75),
+    transparent
+  );
+  opacity: 0.65;
+  transition: opacity 0.3s ease;
+}
+
+.role-card:hover {
+  transform: translateY(-7px);
+  background: rgba(255, 255, 255, 0.86);
+  border-color: rgba(111, 166, 101, 0.42);
+  box-shadow:
+    0 20px 46px rgba(31, 69, 39, 0.12),
+    0 0 22px rgba(124, 182, 110, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.role-card:hover::before {
+  opacity: 1;
+}
+
+.role-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 17px;
+}
+
+.role-icon-box {
+  display: flex;
+  flex: 0 0 49px;
+  align-items: center;
+  justify-content: center;
+  width: 49px;
+  height: 49px;
+
+  color: #3c7c46;
+  background: linear-gradient(145deg, #f6fbf2, #dcefd3);
+  border: 1px solid rgba(87, 143, 81, 0.15);
+  border-radius: 16px;
+  box-shadow:
+    0 5px 13px rgba(46, 92, 47, 0.075),
+    inset 0 1px 0 #ffffff;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.role-card:hover .role-icon-box {
+  transform: translateY(-2px) rotate(-3deg);
+  box-shadow: 0 8px 18px rgba(46, 92, 47, 0.13);
+}
+
+.role-card-title {
+  margin: 0;
+  color: var(--welcome-green);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+
+.role-card-desc {
+  flex: 1;
+  margin: 0 0 22px;
+  color: var(--welcome-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.role-card-features {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin: 0 0 27px;
+  padding: 0;
+  list-style: none;
+
+  color: #49634e;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.role-card-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.role-card-features li svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #4c9655 !important;
+}
+
+/* Role action buttons */
+
+.role-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.btn-role-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 43px;
+  padding: 11px 13px;
+
+  border-radius: 13px;
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+
+  transition:
+    transform 0.23s ease,
+    box-shadow 0.23s ease,
+    background 0.23s ease,
+    border-color 0.23s ease,
+    color 0.23s ease;
+}
+
+.btn-role-action.primary {
+  color: #ffffff;
+  background: linear-gradient(135deg, #51965a, #2d6a3d);
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  box-shadow:
+    0 5px 15px rgba(46, 125, 79, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-role-action.primary:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #60a967, #347a47);
+  box-shadow:
+    0 8px 20px rgba(46, 125, 79, 0.29),
+    0 0 13px rgba(100, 174, 93, 0.12);
+}
+
+.btn-role-action.primary svg {
+  flex-shrink: 0;
+  transition: transform 0.23s ease;
+}
+
+.btn-role-action.primary:hover svg {
+  transform: translateX(3px);
+}
+
+.btn-role-action.secondary {
+  color: #607765;
+  background: rgba(241, 248, 237, 0.7);
+  border: 1px solid rgba(91, 133, 83, 0.16);
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.btn-role-action.secondary:hover {
+  color: var(--welcome-green);
+  background: rgba(225, 240, 217, 0.85);
+  border-color: rgba(91, 143, 81, 0.4);
+  box-shadow: 0 4px 13px rgba(31, 67, 39, 0.065);
+  transform: translateY(-1px);
+}
+
+/* ==========================================
+   FOOTER — Soft glass finish
+========================================== */
+
+.welcome-footer {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  padding: 27px 24px;
+
+  color: #718575;
+  background: rgba(247, 252, 244, 0.68);
+  border-top: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 -5px 22px rgba(31, 67, 39, 0.025);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+
+  font-size: 12px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.welcome-footer p {
+  margin: 0;
+}
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes welcomeFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+   RESPONSIVE — Tablets
+========================================== */
+
+@media (max-width: 1024px) {
+  .workflow-steps-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .roles-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .role-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .role-card:last-child .role-card-actions {
+    max-width: 520px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE — Mobile
+========================================== */
+
+@media (max-width: 600px) {
+  .welcome-nav {
+    min-height: 66px;
+    gap: 10px;
+    padding: 11px 15px;
+  }
+
+  .welcome-brand {
+    gap: 8px;
+    font-size: 19px;
+  }
+
+  .welcome-brand svg {
+    width: 34px;
+    height: 34px;
+    padding: 6px;
+  }
+
+  .welcome-nav-actions {
+    gap: 7px;
+  }
+
+  .btn-nav-login,
+  .btn-nav-signup {
+    min-height: 38px;
+    padding: 9px 11px;
+    border-radius: 11px;
+    font-size: 11px;
+  }
+
+  .welcome-hero {
+    padding: 66px 19px 56px;
+  }
+
+  .welcome-badge {
+    gap: 7px;
+    margin-bottom: 23px;
+    padding: 8px 11px;
+    font-size: 10px;
+  }
+
+  .welcome-headline {
+    margin-bottom: 19px;
+    font-size: clamp(32px, 9vw, 43px);
+    line-height: 1.15;
+    letter-spacing: -1.4px;
+  }
+
+  .welcome-subhead {
+    margin-bottom: 27px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .welcome-hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 11px;
+  }
+
+  .btn-primary-large,
+  .btn-secondary-large {
+    width: 100%;
+    min-height: 49px;
+    padding: 13px 15px;
+    border-radius: 13px;
+    font-size: 12px;
+  }
+
+  .welcome-section {
+    padding: 48px 17px;
+  }
+
+  .section-header {
+    margin-bottom: 27px;
+  }
+
+  .section-title {
+    font-size: 25px;
+    letter-spacing: -0.6px;
+  }
+
+  .section-subtitle {
+    font-size: 12px;
+  }
+
+  .workflow-steps-grid,
+  .roles-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+  }
+
+  .workflow-step-card {
+    padding: 22px;
+    border-radius: 19px;
+  }
+
+  .step-desc {
+    font-size: 13px;
+  }
+
+  .role-card {
+    padding: 24px 21px 21px;
+    border-radius: 22px;
+  }
+
+  .role-card:last-child {
+    grid-column: auto;
+  }
+
+  .role-card:last-child .role-card-actions {
+    max-width: none;
+  }
+
+  .role-card-desc {
+    font-size: 13px;
+  }
+
+  .role-card-features {
+    font-size: 12px;
+  }
+
+  .welcome-footer {
+    padding: 22px 17px;
+    font-size: 11px;
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY — Reduced motion
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-page *,
+  .welcome-page *::before,
+  .welcome-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
