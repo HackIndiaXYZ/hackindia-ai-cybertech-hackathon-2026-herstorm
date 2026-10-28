@@ -1,0 +1,323 @@
+/* Trace Page Styles */
+
+.trace-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.trace-nav {
+  height: 64px;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--color-border-sage);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.trace-container {
+  max-width: 820px;
+  margin: 32px auto 64px auto;
+  padding: 0 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.trace-card {
+  background-color: #ffffff;
+  border: 1px solid var(--color-border-sage);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.trace-header {
+  padding: 24px;
+  background-color: #fafcf9;
+  border-bottom: 1px solid var(--color-surface-sage);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .trace-header {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.trace-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+
+.trace-meta {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.trace-image-banner {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  background-color: var(--color-surface-sage);
+  border-bottom: 1px solid var(--color-surface-sage);
+}
+
+.trace-image-placeholder {
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(135deg, #e9f1e6 0%, #d5e5cf 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 1px solid var(--color-border-sage);
+}
+
+.trace-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Trace Sections */
+.trace-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.trace-section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--color-surface-sage);
+  padding-bottom: 8px;
+}
+
+.trace-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 600px) {
+  .trace-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .trace-info-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.trace-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.trace-info-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+}
+
+.trace-info-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* Farm Map Preview */
+.trace-map-box {
+  width: 100%;
+  height: 200px;
+  border: 1px solid var(--color-border-sage);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+/* Quality Assurance AI Box */
+.trace-ai-box {
+  background-color: #fafcf9;
+  border: 1px solid var(--color-border-sage);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.trace-ai-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.trace-ai-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trace-ai-confidence {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-accent);
+  background-color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--color-border-sage);
+}
+
+.trace-ai-reason {
+  font-size: 13px;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.trace-ai-source-tag {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Chain of Custody Timeline */
+.custody-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  padding-left: 28px;
+}
+
+.custody-timeline::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background-color: var(--color-border-sage);
+}
+
+.custody-node {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.custody-dot {
+  position: absolute;
+  left: -28px;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 2px solid var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  z-index: 2;
+}
+
+.custody-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.custody-desc {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+/* Price Transparency Box */
+.price-transparency-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  background-color: #fafcf9;
+  border: 1px solid var(--color-border-sage);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  text-align: center;
+}
+
+.price-transparency-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.price-trans-label {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.price-trans-value {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.price-trans-sub {
+  font-size: 11px;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* Footer & QR Share */
+.trace-share-box {
+  background-color: #ffffff;
+  border: 1px solid var(--color-border-sage);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}

@@ -1,0 +1,57 @@
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+
+.status-badge-pending_fpo,
+.status-badge-placed {
+  background-color: #fef8ee;
+  color: #b7791f;
+  border: 1px solid #f6e0b5;
+}
+
+.status-badge-approved,
+.status-badge-delivered {
+  background-color: #eaf5ee;
+  color: #1e6b37;
+  border: 1px solid #c2e2cc;
+}
+
+.status-badge-rejected,
+.status-badge-auto_rejected {
+  background-color: #fdf2f2;
+  color: #a63d35;
+  border: 1px solid #f5c4c2;
+}
+
+.status-badge-grouped {
+  background-color: #f3f0fb;
+  color: #5c35b7;
+  border: 1px solid #dfd6f6;
+}
+
+.status-badge-shipped {
+  background-color: #eaf4f4;
+  color: #216767;
+  border: 1px solid #bce1e1;
+}
+
+.status-badge-flagged {
+  background-color: #fff6ed;
+  color: #c05621;
+  border: 1px solid #fbd38d;
+}
+
+.status-badge-grade {
+  background-color: #f7faf7;
+  color: var(--color-primary);
+  border: 1px solid var(--color-border-sage);
+}

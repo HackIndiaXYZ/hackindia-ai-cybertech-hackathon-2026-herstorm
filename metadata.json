@@ -1,0 +1,6 @@
+{
+  "name": "TraceCrop - Farm-to-Customer Produce Marketplace",
+  "description": "Transparent farm-to-customer agricultural marketplace connecting Farmers, FPOs, and Customers with AI quality grading, fair pricing insights, and smart dispatch routing.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
